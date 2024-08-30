@@ -1,6 +1,6 @@
 :root{
-    --bg-color1:#212529;
-    --bg-color2:#2a2b2d;
+    --bg-color1:#95b8db;
+    --bg-color2:#486ebb;
     --aqi-1:#d4e157;
     --aqi-2:#ffee58;
     --aqi-3:#ffca28;
@@ -14,25 +14,40 @@
 }
 body{
     min-height: 100vh;
-    background-color: var(--bg-color1);
+    background-image: url('https://images.alphacoders.com/744/thumb-1920-744574.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #fff;
     font-family: sans-serif;
-    padding: 0 15px;
+    padding: 0;
 }
 hr{
     margin-bottom: 10px;
 }
 
 /***************************Navbar****************************/
+input::placeholder {
+    color: #999999;
+}
 .header{
     position: sticky;
     top: 0;
-    background-color: var(--bg-color1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 15px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    & .mylogo{
+        display: flex;
+        flex-direction: row;
+        border-radius: 20px;
+        & .mylogotext{
+            padding-top: 10px;
+        }
+    }
+    
     & #city_input{
         background-color: var(--bg-color2);
         border: none;
