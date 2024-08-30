@@ -59,7 +59,7 @@ input::placeholder {
             outline: none;
         }
     }
-    & #SearchBtn{
+    & #searchBtn{
         background-color: var(--bg-color2);
         border: none;
         padding: 12px;
@@ -79,6 +79,21 @@ input::placeholder {
     }
 }
 
+.city-name {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.city-name h2 {
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 10px;
+}
+#city_input::placeholder {
+    color: black;
+    text-align: center;
+}
 /******************************   CARD      *******************************************/
 .card{
     background-color: var(--bg-color2);
