@@ -285,9 +285,6 @@ input::placeholder {
 }
 
 @media(max-width:1040px){
-    body{
-        overflow-x: hidden;
-    }
     .weather-data .weather-right .highlights{
         & .card{
             grid-column: span 2;
@@ -299,9 +296,7 @@ input::placeholder {
 }
 
 @media(max-width:850px){
-    body{
-        overflow-x: hidden;
-    }
+   
     #locationBtn{
         margin-top: 5px;
        
