@@ -246,10 +246,9 @@ input::placeholder {
 
 /******************Media query *******************************/
 
+
 @media (max-width: 1280px) {
-    body {
-        background-color: #d4e157 
-    }
+  
     .weather-data {
         grid-template-columns: repeat(3, 1fr);
         & .weather-right{
@@ -268,9 +267,7 @@ input::placeholder {
 }
 
 @media(max-width:1040px){
-    body {
-        background-color: #57d1e1 
-    }
+   
     .weather-data{
         grid-template-columns: repeat(2, 1fr);
         & .weather-right{
@@ -289,9 +286,6 @@ input::placeholder {
 }
 
 @media(max-width:1040px){
-    body {
-        background-color: #81eb6c 
-    }
     .weather-data .weather-right .highlights{
         & .card{
             grid-column: span 2;
@@ -303,9 +297,7 @@ input::placeholder {
 }
 
 @media(max-width:850px){
-    body {
-        background-color: #5221da 
-    }
+
     .weather-data{
         grid-template-columns: 1fr;
         & .weather-right .highlights{
@@ -324,15 +316,13 @@ input::placeholder {
 }
 
 @media(max-width:660px){
-    body {
-        background-color: #9b2a16 
-    }
+    
     .header{
         flex-direction: column;
         & h1{
             margin-bottom: 8px;
         }
-        & #city_input, #SearchBtn, #locationBtn{
+        & #city_input, #searchBtn, #locationBtn{
             width: 100%;
             margin-bottom: 10px;
         }
@@ -340,18 +330,14 @@ input::placeholder {
 }
 
 @media(max-width:580px){
-    body {
-        background-color: #645a59 
-    }
+   
     .weather-data .weather-right .highlights .air-indices{
         grid-template-columns: repeat(4,1fr);
     }
 }
 
 @media(max-width:520px){
-    body {
-        background-color: #bd5b52 
-    }
+  
     .weather-data .weather-right .highlights {
         & .card:nth-of-type(3),
         & .card:nth-of-type(4),
@@ -367,27 +353,21 @@ input::placeholder {
 }
 
 @media(max-width:480px){
-    body {
-        background-color: #bd5b52 
-    }
+    
     .weather-data .weather-right .highlights .sunrise-sunset {
         grid-template-columns: 1fr;
     }
 }
 
 @media(max-width:450px){
-    body {
-        background-color: #bd5b52 
-    }
+   
     .weather-data .weather-right .hourly-forecast {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media(max-width:380px){
-    body {
-        background-color: #bd5b52 
-    }
+    
     .weather-data .weather-right .highlights .air-indices {
         grid-template-columns: repeat(2, 1fr);
     }
