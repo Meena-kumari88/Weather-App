@@ -392,3 +392,94 @@ input::placeholder {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* Footer  */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  footer {
+      background-color: hwb(245 4% 91% / 0.502); /* Adjust the rgba value to control the transparency */
+    color: #fff;  /* Adjust the rgba value to control the transparency */
+    
+  }
+  .footerContainer {
+    width: 100%;
+    height: 2%;
+  }
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+  }
+  .socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  }
+  
+  .socialIcons a img {
+  width: 30px; /* Adjust the size of your icons */
+  height: 30px;
+  display: block;
+  }
+  
+  .socialIcons a:hover {
+  background-color: #efe8e8;
+  transition: 0.5s;
+  }
+  
+  .socialIcons a img:hover {
+  filter: invert(100%); /* This will invert the colors on hover, you can adjust as needed */
+  transition: 0.5s;
+  }
+  
+  .footerNav {
+    margin: 30px 0;
+  }
+  .footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+  .footerNav ul li a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.5em;
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+  .footerNav ul li a:hover {
+    opacity: 1;
+  }
+  .footerBottom {
+    background-color: #010317;
+    padding: 20px;
+    text-align: center;
+  }
+  .footerBottom p{
+    color: white;
+    font-size: 1em;
+  }
+  .designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400px;
+    margin: 0px 5px;
+  }
+  @media (max-width: 700px) {
+      .footerNav ul{
+        flex-direction: column;
+      }
+      .footerNav ul li{
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+      }
+  }
