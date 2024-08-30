@@ -19,7 +19,6 @@ body{
     background-size: cover;
     color: #fff;
     font-family: sans-serif;
-    padding: 0;
 }
 hr{
     margin-bottom: 10px;
@@ -297,6 +296,13 @@ input::placeholder {
 }
 
 @media(max-width:850px){
+    body{
+        overflow-x: hidden;
+    }
+    #locationBtn{
+        margin-top: 5px;
+       
+    }
 
     .weather-data{
         grid-template-columns: 1fr;
