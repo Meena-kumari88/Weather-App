@@ -39,7 +39,7 @@ const weatherBackgrounds = {
 function updateBackground(description) {
     let background = weatherBackgrounds[description] || weatherBackgrounds['default'];
     document.body.style.backgroundImage = background;
-    document.body.style.backgroundSize = 'cover'; // Optional: Ensures the background covers the entire page
+    document.body.style.backgroundSize = 'cover'; 
 }
 
 
@@ -122,7 +122,7 @@ function getWeatherDetails(name, lat, lon, country, state) {
             `;
 
         // Update the AQI score bar based on the AQI value
-        const aqiValue = data.list[0].main.aqi * 20; // Assuming the AQI value ranges from 1 to 5
+        const aqiValue = data.list[0].main.aqi * 20; 
         const aqiScore = document.getElementById('aqiScore');
 
         // Update the width of the score bar based on AQI value
@@ -130,17 +130,17 @@ function getWeatherDetails(name, lat, lon, country, state) {
 
         // Optionally, change the color based on AQI range
         if (aqiValue <= 50) {
-            aqiScore.style.backgroundColor = '#44f205'; // Good
+            aqiScore.style.backgroundColor = '#44f205'; 
         } else if (aqiValue <= 100) {
-            aqiScore.style.backgroundColor = '#f4e04d'; // Moderate
+            aqiScore.style.backgroundColor = '#f4e04d'; 
         } else if (aqiValue <= 150) {
-            aqiScore.style.backgroundColor = '#f2cf05'; // Unhealthy for Sensitive Groups
+            aqiScore.style.backgroundColor = '#f2cf05'; 
         } else if (aqiValue <= 200) {
-            aqiScore.style.backgroundColor = '#f28b05'; // Unhealthy
+            aqiScore.style.backgroundColor = '#f28b05'; 
         } else if (aqiValue <= 300) {
-            aqiScore.style.backgroundColor = '#f26805'; // Very Unhealthy
+            aqiScore.style.backgroundColor = '#f26805'; 
         } else {
-            aqiScore.style.backgroundColor = '#f20505'; // Hazardous
+            aqiScore.style.backgroundColor = '#f20505'; 
         }
     }).catch(() => {
         alert('Failed to fetch Air Quality Index');
@@ -251,12 +251,12 @@ function getWeatherDetails(name, lat, lon, country, state) {
                 let itemDate = new Date(item.dt_txt).getDate();
                 if (itemDate === date.getDate()) {
                     let itemTime = new Date(item.dt_txt).getHours();
-                    let timeDiff = Math.abs(itemTime - 12); // Difference from noon for daytime
+                    let timeDiff = Math.abs(itemTime - 12); 
                     if (timeDiff < closestDayDiff) {
                         closestDayDiff = timeDiff;
                         dayTemp = item.main.temp;
                     }
-                    timeDiff = Math.abs(itemTime - 0); // Difference from midnight for nighttime
+                    timeDiff = Math.abs(itemTime - 0); 
                     if (timeDiff < closestNightDiff) {
                         closestNightDiff = timeDiff;
                         nightTemp = item.main.temp;
@@ -288,8 +288,8 @@ function getWeatherDetails(name, lat, lon, country, state) {
 searchBtn.addEventListener('click', function () {
     const cityName = cityInput.value.trim();
     if (cityName) {
-        document.getElementById('cityNameDisplay').textContent = cityName; // Update with input value
-        getCityCoordinates(); // Fetch coordinates and update weather data
+        document.getElementById('cityNameDisplay').textContent = cityName; 
+        getCityCoordinates(); 
     } else {
         alert('Please enter a city name.');
     }
@@ -298,19 +298,19 @@ searchBtn.addEventListener('click', function () {
 // Update the displayed city name when the location button is clicked
 locationBtn.addEventListener('click', function () {
     // Fetch and update city name display based on current location
-    getUserCoordinates(); // Fetch current location and update weather data
+    getUserCoordinates(); 
 });
 
 function getCityCoordinates() {
     let cityName = cityInput.value.trim();
-    cityInput.value = ''; // Clear input field
+    cityInput.value = ''; 
     if (!cityName) return;
     let GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${api_key}`;
     fetch(GEOCODING_API_URL).then(res => res.json()).then(data => {
         if (data && data.length > 0) {
             let { name, lat, lon, country, state } = data[0];
-            document.getElementById('cityNameDisplay').textContent = name; // Update with correct city name from API
-            getWeatherDetails(name, lat, lon, country, state); // Fetch and display weather details
+            document.getElementById('cityNameDisplay').textContent = name; 
+            getWeatherDetails(name, lat, lon, country, state); 
         } else {
             alert(`No results found for ${cityName}`);
         }
@@ -326,8 +326,8 @@ function getUserCoordinates() {
 
         fetch(REVERSE_GEOCODING_URL).then(res => res.json()).then(data => {
             let { name, country, state } = data[0];
-            document.getElementById('cityNameDisplay').textContent = name; // Update with the city name from location
-            getWeatherDetails(name, latitude, longitude, country, state); // Fetch and display weather details
+            document.getElementById('cityNameDisplay').textContent = name; 
+            getWeatherDetails(name, latitude, longitude, country, state); 
         }).catch(() => {
             alert('Failed to fetch user coordinates');
         });
